@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VYBEY — Premium Gen-Z Accessories</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">VYBEY</div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Shop</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="wishlist.html">♡</a>
+    <a href="cart.html">👜</a>
+
+    <div class="account-menu">
+      ☰
+      <div class="account-dropdown">
+        <a href="login.html">Login</a>
+        <a href="signup.html">Signup</a>
+        <a href="my-orders.html">My Orders</a>
+        <a href="#" onclick="logout()">Logout</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-container">
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+      <span>GEN-Z LUXURY ACCESSORIES</span>
+      <h1>Style That<br>Doesn’t Ask for Attention</h1>
+      <p>
+        Premium accessories designed with intention — minimal forms,
+        confident details, and modern attitude.
+      </p>
+
+      <div class="hero-actions">
+        <button>Shop Collection</button>
+        <a href="products.html">Explore Trends →</a>
+      </div>
+    </div>
+
+    <!-- RIGHT IMAGE -->
+    <div class="hero-right">
+      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=800&q=80" alt="Luxury accessory">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= TRENDING ================= -->
+<section class="trending">
+  <div class="section-header text-center">
+    <span>CURATED PICKS</span>
+    <h2>Trending This Season</h2>
+    <p>Minimal pieces. Maximum impact.</p>
+  </div>
+
+  <div class="horizontal-scroll" id="trendingRow">
+    <!-- products JS se aayenge -->
+  </div>
+
+  <div class="trending-progress">
+  <span id="trendingProgress"></span>
+</div>
+
+</section>
+<script>
+  const navbar = document.querySelector(".navbar");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add("floating");
+    } else {
+      navbar.classList.remove("floating");
+    }
+  });
+</script>
+
+<section class="why-vybey">
+  <div class="why-container">
+
+    <div class="why-text">
+      <span>WHY VYBEY</span>
+      <h2>Not Just Accessories.<br>It’s a Statement.</h2>
+      <p>
+        VYBEY is built for Gen-Z who value design, quality and confidence.
+        Every piece is thoughtfully crafted to elevate your everyday style.
+      </p>
+    </div>
+
+    <div class="why-features">
+      <div class="why-card">
+        <h4>Premium Materials</h4>
+        <p>High-quality finishes with long-lasting comfort.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Minimal Design</h4>
+        <p>Clean aesthetics inspired by modern luxury.</p>
+      </div>
+
+      <div class="why-card">
+        <h4>Made for Gen-Z</h4>
+        <p>Bold, confident and unapologetically you.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= BEST SELLERS ================= -->
+<section class="best-sellers">
+
+  <div class="section-header">
+    <span>MOST LOVED</span>
+    <h2>Best Sellers</h2>
+    <p>Customer favorites you can’t go wrong with.</p>
+  </div>
+
+  <div class="best-grid" id="bestSellerGrid">
+    <!-- products JS se aayenge -->
+  </div>
+
+</section>
+
+<section class="reviews">
+  <div class="section-header">
+    <span>REAL VOICES</span>
+    <h2>Loved by Gen-Z</h2>
+    <p>Real customers. Real style. Real confidence.</p>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <p>
+        “Quality honestly exceeded my expectations. Packaging bhi premium tha.”
+      </p>
+      <h6>— Riya S.</h6>
+      <span>Instagram Customer</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        “Minimal design but looks expensive. Got compliments on first wear.”
+      </p>
+      <h6>— Arjun M.</h6>
+      <span>Delhi</span>
+    </div>
+
+    <div class="review-card">
+      <p>
+        “Fast delivery, clean finish and very Gen-Z vibes. Will order again.”
+      </p>
+      <h6>— Sneha K.</h6>
+      <span>Mumbai</span>
+    </div>
+  </div>
+</section>
+
+<section class="trust-bar">
+  <div class="trust-grid">
+
+    <div class="trust-item">
+      <span>🚚</span>
+      <h4>Free Shipping</h4>
+      <p>Fast & reliable delivery across India</p>
+    </div>
+
+    <div class="trust-item">
+      <span>🔒</span>
+      <h4>Secure Payments</h4>
+      <p>100% safe & encrypted checkout</p>
+    </div>
+
+    <div class="trust-item">
+      <span>↩️</span>
+      <h4>Easy Returns</h4>
+      <p>Hassle-free returns & exchanges</p>
+    </div>
+
+    <div class="trust-item">
+      <span>⭐</span>
+      <h4>Premium Quality</h4>
+      <p>Designed for durability & comfort</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>VYBEY</h3>
+      <p>Premium accessories for modern Gen-Z.<br>Wear your vibe.</p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <p>Shop</p>
+      <p>Collections</p>
+      <p>Contact</p>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <p>FAQs</p>
+      <p>Returns</p>
+      <p>Privacy Policy</p>
+    </div>
+
+    <div>
+      <h4>Social</h4>
+      <p>Instagram</p>
+      <p>Twitter</p>
+      <p>YouTube</p>
+    </div>
+  </div>
+
+  <p class="copyright">© 2026 VYBEY.IN</p>
+</footer>
+
+<script>
+function logout() {
+  localStorage.clear();
+  location.reload();
+}
+
+fetch("http://localhost:5000/api/products")
+  .then(res => res.json())
+  .then(products => {
+    const row = document.getElementById("trendingRow");
+
+    products.forEach(p => {
+      row.innerHTML += `
+        <div class="product-card"
+          onclick='localStorage.setItem("selectedProduct",JSON.stringify(${JSON.stringify(p)}));location.href="product.html"'>
+
+          <img src="http://localhost:5000/uploads/${p.image}">
+          <h6>${p.name}</h6>
+          <p>₹${p.price}</p>
+
+        </div>
+      `;
+    });
+  });
+
+</script>
+<script>
+/* EXISTING JS — kuch delete mat karna */
+
+fetch("http://localhost:5000/api/products?bestSeller=true")
+  .then(res => res.json())
+  .then(products => {
+    const grid = document.getElementById("bestSellerGrid");
+
+    products.slice(0,3).forEach(p => {
+      grid.innerHTML += `
+        <div class="product-card"
+          onclick='localStorage.setItem("selectedProduct",JSON.stringify(${JSON.stringify(p)}));location.href="product.html"'>
+
+          <div style="position:relative">
+            <span class="product-badge">BEST SELLER</span>
+            <img src="http://localhost:5000/uploads/${p.image}">
+          </div>
+
+          <h6>${p.name}</h6>
+          <p>₹${p.price}</p>
+        </div>
+      `;
+    });
+  });
+
+</script>
+
+<script>
+  const row = document.getElementById("trendingRow");
+  const bar = document.getElementById("trendingProgress");
+
+  row.addEventListener("scroll", () => {
+    const maxScroll = row.scrollWidth - row.clientWidth;
+    const percent = (row.scrollLeft / maxScroll) * 100;
+    bar.style.width = percent + "%";
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

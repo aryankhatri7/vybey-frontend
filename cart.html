@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VYBEY — Your Cart</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (grid only) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+  <div class="logo">
+    <a href="index.html" style="color:white;text-decoration:none;">VYBEY</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="products.html">Shop</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <a href="cart.html">👜 <span id="cart-count">0</span></a>
+  </div>
+</nav>
+
+<!-- ================= CART ================= -->
+<section class="container" style="max-width:1200px;margin-top:80px;">
+  
+  <div class="section-header text-center">
+    <span>YOUR SELECTION</span>
+    <h2>Your Cart</h2>
+    <p>Review your pieces before checkout</p>
+  </div>
+
+  <div id="cart-items" class="row mt-5"></div>
+
+  <!-- Cart Summary -->
+  <div class="row mt-4 align-items-center">
+    <div class="col-md-6"></div>
+    <div class="col-md-6 text-end">
+      <h4 style="font-weight:600;">
+        Total: <span style="color:#9a7b5f;">₹<span id="cart-total">0</span></span>
+      </h4>
+
+      <a href="checkout.html" id="checkout-btn"
+        style="
+          display:inline-block;
+          margin-top:20px;
+          background:#9a7b5f;
+          color:white;
+          padding:14px 34px;
+          border-radius:999px;
+          text-decoration:none;
+          font-size:14px;
+          box-shadow:0 12px 30px rgba(154,123,95,0.35);
+        ">
+        Proceed to Checkout →
+      </a>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div>
+      <h3>VYBEY</h3>
+      <p>Premium accessories for Gen-Z.<br>Wear your vibe.</p>
+    </div>
+
+    <div>
+      <h4>Explore</h4>
+      <p>Shop</p>
+      <p>Collections</p>
+      <p>Contact</p>
+    </div>
+
+    <div>
+      <h4>Support</h4>
+      <p>FAQs</p>
+      <p>Returns</p>
+      <p>Privacy Policy</p>
+    </div>
+
+    <div>
+      <h4>Social</h4>
+      <p>Instagram</p>
+      <p>Twitter</p>
+      <p>YouTube</p>
+    </div>
+  </div>
+
+  <p class="copyright">© 2026 VYBEY.IN</p>
+</footer>
+
+<!-- ================= JS (UNCHANGED LOGIC) ================= -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    cart = cart.map((item, index) => {
+        return {
+            id: item.id || `old_${index}`,
+            name: item.name || "Unknown Product",
+            price: item.price || 0,
+            image: item.image 
+                   ? (item.image.startsWith("http") ? item.image : "http://localhost:5000/uploads/" + item.image)
+                   : "https://via.placeholder.com/300",
+            quantity: item.quantity || 1
+        };
+    });
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    function renderCart() {
+        const container = document.getElementById('cart-items');
+        container.innerHTML = '';
+        let total = 0;
+
+        if(cart.length === 0){
+            container.innerHTML = `
+              <div class="text-center" style="margin-top:60px;">
+                <p style="font-size:16px;color:#6b6b6b;">Your cart is empty 😔</p>
+                <a href="products.html"
+                  style="
+                    display:inline-block;
+                    margin-top:18px;
+                    background:#1f1f1f;
+                    color:white;
+                    padding:12px 30px;
+                    border-radius:999px;
+                    text-decoration:none;
+                    font-size:14px;
+                  ">
+                  Continue Shopping
+                </a>
+              </div>`;
+            document.getElementById('cart-total').innerText = 0;
+            updateCartCount();
+            return;
+        }
+
+        cart.forEach(item => {
+            total += item.price * item.quantity;
+
+            container.innerHTML += `
+              <div class="col-md-4 mb-4">
+                <div class="product-card">
+                  <img src="${item.image}" alt="${item.name}"
+                    onerror="this.src='https://via.placeholder.com/300'">
+
+                  <h6>${item.name}</h6>
+                  <p>₹${item.price}</p>
+
+                  <div style="display:flex;justify-content:center;gap:12px;align-items:center;margin-top:10px;">
+                    <button onclick="decrease('${item.id}')" style="border:none;background:#eee;padding:4px 10px;border-radius:6px;">−</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="increase('${item.id}')" style="border:none;background:#eee;padding:4px 10px;border-radius:6px;">+</button>
+                  </div>
+
+                  <button onclick="removeItem('${item.id}')"
+                    style="margin-top:12px;border:none;background:none;color:#a00;font-size:13px;">
+                    Remove
+                  </button>
+                </div>
+              </div>
+            `;
+        });
+
+        document.getElementById('cart-total').innerText = total;
+        updateCartCount();
+    }
+
+    window.increase = function(id){
+        cart = cart.map(p=>{
+            if(p.id === id) p.quantity +=1;
+            return p;
+        });
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    window.decrease = function(id){
+        cart = cart.map(p=>{
+            if(p.id === id) p.quantity -=1;
+            return p;
+        }).filter(p=>p.quantity>0);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    window.removeItem = function(id){
+        cart = cart.filter(p=>p.id!==id);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+    }
+
+    function updateCartCount(){
+        let count = cart.reduce((sum,item)=>sum+item.quantity,0);
+        document.getElementById('cart-count').innerText = count;
+    }
+
+    renderCart();
+});
+
+const checkoutBtn = document.getElementById("checkout-btn");
+checkoutBtn.addEventListener("click", function (e) {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (cart.length === 0) {
+        e.preventDefault();
+        alert("Your cart is empty 😔");
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+/* ================= ADMIN BASE ================= */
+
+body {
+  background: #f7f4ef; /* beige */
+  font-family: 'Poppins', sans-serif;
+  color: #2b2623;
+}
+
+/* ================= ADMIN CONTAINER ================= */
+
+.admin-container {
+  width: 380px;
+  margin: 100px auto;
+  padding: 32px;
+  background: #ffffff;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+/* heading */
+.admin-container h2 {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #2b2623;
+}
+
+/* ================= INPUTS ================= */
+
+.admin-container input {
+  width: 100%;
+  padding: 13px 14px;
+  margin: 12px 0;
+  border-radius: 12px;
+  border: 1px solid #e4ded7;
+  outline: none;
+  background: #f9f7f4;
+  color: #2b2623;
+  font-size: 14px;
+}
+
+.admin-container input:focus {
+  border-color: #9a7b5f;
+  background: #fff;
+}
+
+/* ================= BUTTON ================= */
+
+.admin-container button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 18px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  background: #2b2623; /* coffee dark */
+  color: #fff;
+  transition: 0.3s ease;
+}
+
+.admin-container button:hover {
+  background: #9a7b5f; /* coffee accent */
+}
+
+/* ================= PRODUCT LIST ================= */
+
+.product-list {
+  margin-top: 26px;
+}
+
+/* product row */
+.admin-product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f7f4ef;
+  padding: 12px 14px;
+  border-radius: 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+}
+
+/* image */
+.admin-product img {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= DELETE BUTTON ================= */
+
+.delete-btn {
+  background: #b64545;
+  border: none;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #8f3232;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+  .admin-container {
+    width: 92%;
+    margin: 80px auto;
+    padding: 26px;
+  }
+}
