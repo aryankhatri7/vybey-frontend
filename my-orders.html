@@ -130,7 +130,7 @@
 <script>
 async function fetchMyOrders() {
   try {
-    const res = await fetch("http://localhost:5000/api/orders");
+    const res = await fetch("https://vybey-backened.onrender.com/api/orders");
     const orders = await res.json();
 
     const container = document.getElementById("ordersContainer");

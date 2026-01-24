@@ -267,7 +267,7 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
     };
 
     try {
-        const res = await fetch('http://localhost:5000/api/orders/add', {
+        const res = await fetch('https://vybey-backened.onrender.com/api/orders/add', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)

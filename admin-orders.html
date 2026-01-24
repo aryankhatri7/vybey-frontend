@@ -153,7 +153,7 @@ if (localStorage.getItem("adminLoggedIn") !== "true") {
 
   async function fetchOrders() {
     try {
-      const res = await fetch('http://localhost:5000/api/orders');
+      const res = await fetch('https://vybey-backened.onrender.com/api/orders');
       const orders = await res.json();
       const table = document.getElementById('ordersTable');
       table.innerHTML = '';
@@ -205,7 +205,7 @@ if (localStorage.getItem("adminLoggedIn") !== "true") {
 
   async function updateStatus(id, status) {
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/${id}`, {
+      const res = await fetch(`https://vybey-backened.onrender.com/api/orders/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status })
@@ -219,7 +219,7 @@ if (localStorage.getItem("adminLoggedIn") !== "true") {
   async function deleteOrder(id) {
     if (!confirm("Delete this order?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/orders/${id}`, {
+      const res = await fetch(`https://vybey-backened.onrender.com/api/orders/${id}`, {
         method: 'DELETE'
       });
       if (res.ok) fetchOrders();

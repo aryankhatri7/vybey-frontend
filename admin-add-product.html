@@ -126,19 +126,18 @@
 
   </div>
 </div>
-
 <script>
   const productList = document.getElementById("productList");
 
   async function fetchProducts() {
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch(`${API_BASE_URL}/api/products`);
     const products = await res.json();
     productList.innerHTML = "";
 
     products.forEach(p => {
       productList.innerHTML += `
         <div class="product-item">
-          <img src="http://localhost:5000/uploads/${p.image}">
+          <img src="${API_BASE_URL}/uploads/${p.image}">
           <div>
             <strong>${p.name}</strong><br>
             ₹${p.price}
@@ -151,7 +150,7 @@
 
   async function deleteProduct(id) {
     if (!confirm("Delete product?")) return;
-    await fetch(`http://localhost:5000/api/products/${id}`, { method: "DELETE" });
+    await fetch(`${API_BASE_URL}/api/products/${id}`, { method: "DELETE" });
     fetchProducts();
   }
 
@@ -159,13 +158,18 @@
     e.preventDefault();
     const formData = new FormData(this);
 
-    await fetch("http://localhost:5000/api/products/add", {
+    const res = await fetch(`${API_BASE_URL}/api/products/add`, {
       method: "POST",
       body: formData
     });
 
-    this.reset();
-    fetchProducts();
+    if (res.ok) {
+      alert("✅ Product added");
+      this.reset();
+      fetchProducts();
+    } else {
+      alert("❌ Error adding product");
+    }
   });
 
   function logout() {
@@ -175,6 +179,7 @@
 
   fetchProducts();
 </script>
+
 
 </body>
 </html>
