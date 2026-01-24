@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "product.html";
   }
 
-  fetch("http://localhost:5000/api/products")
+  fetch("https://vybey-backened.onrender.com/api/products")
     .then(res => res.json())
     .then(products => {
       const list = document.getElementById("productList");
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
               data-price="${p.price}"
               data-image="${p.image}">
 
-              <img src="http://localhost:5000/uploads/${p.image}" alt="${p.name}">
+              <img src="https://vybey-backened.onrender.com/uploads/${p.image}" alt="${p.name}">
 
               <div class="product-meta">
                 <h6>${p.name}</h6>
