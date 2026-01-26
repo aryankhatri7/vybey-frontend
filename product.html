@@ -58,9 +58,7 @@ function renderProduct() {
   document.getElementById("productDetails").innerHTML = `
     <div class="col-lg-6 mb-5">
       <div class="product-image-wrap">
-        <img src="${product.image}">
-
->
+        <img src="${selectedProduct.image}" alt="${selectedProduct.name}">
       </div>
     </div>
 
@@ -76,20 +74,19 @@ function renderProduct() {
         confident details and everyday comfort.
       </p>
 
-      <!-- QUANTITY -->
       <div class="qty-wrap">
         <button onclick="changeQty(-1)">−</button>
         <span id="qty">${quantity}</span>
         <button onclick="changeQty(1)">+</button>
       </div>
 
-      <!-- CTA -->
       <button class="add-to-cart-btn" onclick="addToCart()">
         Add to Cart →
       </button>
     </div>
   `;
 }
+
 
 function changeQty(val) {
   quantity += val;
