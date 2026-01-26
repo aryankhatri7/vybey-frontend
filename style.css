@@ -733,3 +733,37 @@ body {
     font-size: 13px;
   }
 }
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .shop-grid,
+  .best-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 0 12px;
+  }
+
+  .product-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .product-card img {
+    height: 130px;
+    object-fit: contain;
+  }
+
+  .product-card h6 {
+    font-size: 13px;
+  }
+
+  .product-card p {
+    font-size: 12px;
+  }
+
+  .product-card button {
+    font-size: 12px;
+    padding: 8px;
+  }
+}
