@@ -255,7 +255,7 @@ fetch("https://vybey-backened.onrender.com/api/products")
         <div class="product-card"
           onclick='localStorage.setItem("selectedProduct",JSON.stringify(${JSON.stringify(p)}));location.href="product.html"'>
 
-          <img src="https://vybey-backened.onrender.com/uploads/${p.image}">
+          <img src="${p.image}">
           <h6>${p.name}</h6>
           <p>₹${p.price}</p>
 
@@ -280,7 +280,7 @@ fetch("https://vybey-backened.onrender.com/api/products?bestSeller=true")
 
           <div style="position:relative">
             <span class="product-badge">BEST SELLER</span>
-            <img src="https://vybey-backened.onrender.com/uploads/${p.image}">
+            <img src="${p.image}">
           </div>
 
           <h6>${p.name}</h6>

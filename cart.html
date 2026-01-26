@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name: item.name || "Unknown Product",
             price: item.price || 0,
             image: item.image 
-                   ? (item.image.startsWith("http") ? item.image : "https://vybey-backened.onrender.com/uploads/" + item.image)
+                   ? (item.image.startsWith("http") ? item.image : API_BASE_URL + "/uploads/" + item.image)
                    : "https://via.placeholder.com/300",
             quantity: item.quantity || 1
         };

@@ -130,7 +130,23 @@
 <script>
 async function fetchMyOrders() {
   try {
-    const res = await fetch("https://vybey-backened.onrender.com/api/orders");
+    const user = JSON.parse(localStorage.getItem("user"));
+const token = localStorage.getItem("token");
+
+if (!user || !token) {
+  alert("Please login to view your orders");
+  window.location.href = "login.html";
+}
+
+    const res = await const res = await fetch(
+  API_BASE_URL + "/api/orders/user/" + user.id,
+  {
+    headers: {
+      "Authorization": "Bearer " + token
+    }
+  }
+);
+
     const orders = await res.json();
 
     const container = document.getElementById("ordersContainer");
@@ -147,7 +163,8 @@ async function fetchMyOrders() {
         itemsHTML += `
           <div class="d-flex justify-content-between">
             <span>${item.name} × ${item.quantity}</span>
-            <span>₹${item.price}</span>
+            <span>₹${item.price * item.quantity}</span>
+
           </div>
         `;
       });
@@ -157,7 +174,8 @@ async function fetchMyOrders() {
           <div class="order-card">
             <div class="order-header">
               <span>Order ID: ${order._id.slice(-6)}</span>
-              <span class="order-status">${order.status}</span>
+              <span class="order-status">${order.status || "Processing"}</span>
+
             </div>
             <div class="card-body">
               ${itemsHTML}

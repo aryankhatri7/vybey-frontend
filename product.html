@@ -58,8 +58,8 @@ function renderProduct() {
   document.getElementById("productDetails").innerHTML = `
     <div class="col-lg-6 mb-5">
       <div class="product-image-wrap">
-        <img src="https://vybey-backened.onrender.com/uploads/${selectedProduct.image}"
-          alt="${selectedProduct.name}">
+        <img src="https://vybey-backened.onrender.com/uploads/${selectedProduct.image}">
+>
       </div>
     </div>
 
@@ -98,13 +98,13 @@ function changeQty(val) {
 
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  let existing = cart.find(p => p.id === selectedProduct.id);
+  let existing = cart.find(p => p._id === selectedProduct._id);
 
   if (existing) {
     existing.quantity += quantity;
   } else {
     cart.push({
-      id: selectedProduct.id,
+      _id: selectedProduct._id,
       name: selectedProduct.name,
       price: selectedProduct.price,
       image: selectedProduct.image,
@@ -115,6 +115,11 @@ function addToCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Added to cart 👜");
 }
+
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Added to cart 👜");
+
 
 function goBack() {
   window.location.href = "products.html";

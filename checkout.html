@@ -209,7 +209,12 @@ cart = cart.map((item, index) => ({
     id: item.id || `old_${index}`,
     name: item.name || "Unknown Product",
     price: item.price || 0,
-    image: item.image || "https://via.placeholder.com/300",
+    image: item.image
+  ? (item.image.startsWith("http")
+      ? item.image
+      : API_BASE_URL + "/uploads/" + item.image)
+  : "https://via.placeholder.com/300",
+
     quantity: item.quantity || 1
 }));
 localStorage.setItem('cart', JSON.stringify(cart));
@@ -267,7 +272,8 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
     };
 
     try {
-        const res = await fetch('https://vybey-backened.onrender.com/api/orders/add', {
+        const res = await fetch(API_BASE_URL + '/api/orders/add', {
+
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(order)
@@ -284,6 +290,11 @@ document.getElementById('checkout-form').addEventListener('submit', async (e) =>
         console.error(err);
         alert("Server error!");
     }
+    if(document.getElementById('phone').value.length < 10){
+  alert("Enter valid phone number");
+  return;
+}
+
 });
 </script>
 
