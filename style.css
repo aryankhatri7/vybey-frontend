@@ -483,14 +483,34 @@ body {
 }
 
 /* ======================================================
-   RESPONSIVE (ALL MOBILE IN ONE PLACE)
+   RESPONSIVE – CLEAN & STABLE (VYBEY)
 ====================================================== */
+
+/* ---------- TABLET ---------- */
 @media (max-width: 900px) {
-  .best-grid { grid-template-columns: 1fr 1fr; }
+  .best-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
+/* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
-  .hamburger { display: block; }
+
+  /* BODY OFFSET */
+  body {
+    padding-top: 90px;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    width: calc(100% - 20px);
+    padding: 10px 16px;
+    border-radius: 18px;
+  }
+
+  .hamburger {
+    display: block;
+  }
 
   .nav-links {
     position: absolute;
@@ -502,192 +522,34 @@ body {
     backdrop-filter: blur(14px);
     border-radius: 24px;
     padding: 20px 0;
+    display: none;
     flex-direction: column;
     gap: 18px;
-    display: none;
   }
 
-  .nav-links.show { display: flex; }
+  .nav-links.show {
+    display: flex;
+  }
 
+  /* HERO */
   .hero-container {
     grid-template-columns: 1fr;
+    padding: 0 18px;
     text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 30px;
+    line-height: 1.25;
   }
 
   .hero-right img {
     margin: 40px auto 0;
   }
 
-  .reviews-grid,
-  .footer-grid,
-  .why-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .best-grid { grid-template-columns: 1fr; }
-}
-/* ======================================================
-   GLOBAL PRODUCT IMAGE FIX (ALL SECTIONS)
-   Applies to: Trending, Best Sellers, Shop, Grids
-   Does NOT affect Hero section
-====================================================== */
-
-.product-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.product-card img {
-  width: 100%;
-  height: 260px;          /* 🔥 ONE fixed height for ALL */
-  object-fit: cover;     /* crop, no stretch */
-  border-radius: 16px;
-  flex-shrink: 0;
-}
-/* ============================= */
-/* 📱 GLOBAL MOBILE FIX – VYBEY */
-/* ============================= */
-
-@media (max-width: 768px) {
-
-  /* 🚫 Stop horizontal scroll */
-  html, body {
-    width: 100%;
-    overflow-x: hidden;
-  }
-
-  /* 📦 Universal safety */
-  * {
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  /* 🖼️ Images never overflow */
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* 🧭 NAVBAR FIX */
-  .navbar {
-    width: 100%;
-    padding: 12px 16px;
-    flex-wrap: wrap;
-  }
-
-  .nav-links {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 8px;
-  }
-
-  /* 🏠 CONTAINERS */
-  .container,
-  section,
-  .wrapper,
-  .content {
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin: 0 auto;
-  }
-
-  /* 🛍️ PRODUCT GRID FIX */
-  .products,
-  .product-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px;
-  }
-
-  /* 🧾 CARDS */
-  .product-card,
-  .card {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* 🔘 BUTTONS & INPUTS */
-  button,
-  input,
-  select,
-  textarea {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* 🧾 AUTH PAGES */
-  .auth-wrapper {
-    padding: 20px;
-  }
-
-  .auth-card {
-    width: 100%;
-    max-width: 420px;
-    margin: auto;
-  }
-
-}
-/* ================= MOBILE FINAL FIX ================= */
-@media (max-width: 768px) {
-
-  /* BODY */
-  body {
-    padding-top: 90px;
-  }
-
-  /* NAVBAR */
-  .navbar {
-    padding: 12px 16px;
-    border-radius: 18px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .logo a {
-    font-size: 16px;
-    letter-spacing: 1px;
-  }
-
-  /* HERO */
-  .hero {
-    padding: 40px 18px;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 20px;
-  }
-
-  .hero img {
-    width: 100%;
-    max-width: 260px;
-    margin: 30px auto 0;
-    display: block;
-  }
-
-  /* PRODUCTS GRID */
+  /* PRODUCTS */
   .shop-grid,
   .best-grid {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
     padding: 0 16px;
@@ -695,75 +557,32 @@ body {
 
   .product-card {
     padding: 14px;
-    border-radius: 16px;
   }
 
   .product-card img {
-    height: 140px;
-    object-fit: contain;
-  }
-
-  .product-card h3 {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .product-card p {
-    font-size: 13px;
-  }
-
-  .product-card button {
-    width: 100%;
-    padding: 10px;
-    font-size: 13px;
-    margin-top: 8px;
-  }
-
-  /* SHOP HEADER */
-  .shop-header {
-    padding: 40px 16px;
-    text-align: center;
-  }
-
-  .shop-header h1 {
-    font-size: 26px;
-  }
-
-  .shop-header p {
-    font-size: 13px;
-  }
-}
-/* ===== MOBILE FIX ===== */
-@media (max-width: 768px) {
-
-  .shop-grid,
-  .best-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    padding: 0 12px;
-  }
-
-  .product-card {
-    padding: 12px;
-    border-radius: 14px;
-  }
-
-  .product-card img {
-    height: 130px;
-    object-fit: contain;
+    height: 180px;
+    object-fit: cover;
   }
 
   .product-card h6 {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .product-card p {
-    font-size: 12px;
+    font-size: 13px;
   }
 
-  .product-card button {
-    font-size: 12px;
-    padding: 8px;
+  /* STACKED SECTIONS */
+  .reviews-grid,
+  .footer-grid,
+  .why-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+@media (max-width: 600px) {
+  .best-grid {
+    grid-template-columns: 1fr;
   }
 }
