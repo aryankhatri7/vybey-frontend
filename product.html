@@ -96,6 +96,7 @@ function changeQty(val) {
 
 function addToCart() {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
   let existing = cart.find(p => p._id === selectedProduct._id);
 
   if (existing) {
@@ -113,10 +114,6 @@ function addToCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Added to cart 👜");
 }
-
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Added to cart 👜");
 
 
 function goBack() {
