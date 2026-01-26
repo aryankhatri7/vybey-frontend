@@ -137,7 +137,8 @@
     products.forEach(p => {
       productList.innerHTML += `
         <div class="product-item">
-          <img src="${API_BASE_URL}/uploads/${p.image}">
+          <img src="${p.image}">
+
           <div>
             <strong>${p.name}</strong><br>
             ₹${p.price}
