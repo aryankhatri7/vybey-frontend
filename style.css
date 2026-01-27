@@ -241,7 +241,7 @@ body {
 /* hero image */
 .hero-right img {
   width: 100%;
-  max-width: 420px;
+  max-width: 480px;
   margin-left: auto;
   background: white;
   padding: 8px;
@@ -296,7 +296,7 @@ body {
 }
 
 .product-card:hover {
-  transform: translateY(-14px);
+  transform: translateY(-10px);
   border-color: rgba(154,123,95,0.6);
   box-shadow:
     0 25px 60px rgba(0,0,0,0.15),
@@ -305,6 +305,7 @@ body {
 
 .product-card img {
   width: 100%;
+  height: 260px;
   object-fit: cover;
   border-radius: 16px;
   transition: transform 0.45s ease;
@@ -326,6 +327,10 @@ body {
   font-weight: 700;
   color: var(--accent);
 }
+.product-card {
+  scroll-snap-align: start;
+}
+
 
 /* ======================================================
    TRENDING (HORIZONTAL SCROLL)
@@ -493,10 +498,9 @@ body {
   }
 }
 
-/* ---------- MOBILE ---------- */
+  /* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
 
-  /* BODY OFFSET */
   body {
     padding-top: 90px;
   }
@@ -584,5 +588,11 @@ body {
 @media (max-width: 600px) {
   .best-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .footer-grid {
+    gap: 24px;
+    text-align: center;
   }
 }
