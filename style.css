@@ -487,27 +487,14 @@ body {
   color: #aaa;
 }
 
-/* ======================================================
-   RESPONSIVE – CLEAN & STABLE (VYBEY)
-====================================================== */
-html, body {
-  overflow-x: hidden;
-}
-
-/* BASE GRID (DESKTOP) */
-.shop-grid {
-  max-width: 1200px;
-  margin: 60px auto 0;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 36px;
-}
+//* ================= RESPONSIVE (FIXED) ================= */
 
 /* ---------- TABLET ---------- */
 @media (max-width: 900px) {
+  .shop-grid,
   .best-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 }
 
@@ -549,35 +536,18 @@ html, body {
   }
 
   /* HERO */
-  .hero {
-    min-height: calc(100vh - 90px);
-  }
-
   .hero-container {
     grid-template-columns: 1fr;
-    padding: 0 18px;
     text-align: center;
-  }
-
-  .hero-left h1 {
-    font-size: 30px;
-    line-height: 1.25;
-  }
-
-  .hero-right img {
-    margin: 40px auto 0;
+    padding: 0 18px;
   }
 
   /* PRODUCTS */
-  
+  .shop-grid,
   .best-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
     padding: 0 16px;
-  }
-
-  .product-card {
-    padding: 14px;
+    gap: 16px;
   }
 
   .product-card img {
@@ -585,29 +555,18 @@ html, body {
     object-fit: cover;
   }
 
-  .product-card h6 {
-    font-size: 14px;
-  }
-
-  .product-card p {
-    font-size: 13px;
-  }
-
   /* STACKED SECTIONS */
   .reviews-grid,
   .footer-grid,
   .why-container {
     grid-template-columns: 1fr;
-  }
-}
-@media (max-width: 768px) {
-  .hero-right img {
-    max-width: 100%;
+    text-align: center;
   }
 }
 
 /* ---------- SMALL MOBILE ---------- */
 @media (max-width: 600px) {
+  .shop-grid,
   .best-grid {
     grid-template-columns: 1fr;
   }
