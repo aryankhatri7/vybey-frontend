@@ -490,6 +490,15 @@ body {
 /* ======================================================
    RESPONSIVE – CLEAN & STABLE (VYBEY)
 ====================================================== */
+.shop-grid {
+  max-width: 1200px;
+  margin: 60px auto 0;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
 
 /* ---------- TABLET ---------- */
 @media (max-width: 900px) {
@@ -500,6 +509,11 @@ body {
 
   /* ---------- MOBILE ---------- */
 @media (max-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 90px);
+  }
+}
+
 
   body {
     padding-top: 90px;
