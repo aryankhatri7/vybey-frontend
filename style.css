@@ -571,3 +571,96 @@ body {
     grid-template-columns: 1fr;
   }
 }
+/* ================= AUTH PAGES (LOGIN / SIGNUP) ================= */
+
+.auth-body {
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* wrapper */
+.auth-wrapper {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+/* card */
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #fff;
+  padding: 36px 32px;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+/* small tag */
+.auth-tag {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* heading */
+.auth-card h2 {
+  margin-top: 10px;
+  font-size: 26px;
+  color: var(--dark);
+}
+
+/* subtitle */
+.auth-sub {
+  margin: 10px 0 26px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* inputs */
+.auth-input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: var(--accent);
+}
+
+/* button */
+.auth-btn {
+  width: 100%;
+  padding: 14px;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: #8a6b4f;
+}
+
+/* footer */
+.auth-footer {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.auth-footer a {
+  color: var(--accent);
+  font-weight: 500;
+}
