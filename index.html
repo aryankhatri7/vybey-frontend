@@ -240,7 +240,8 @@
 </footer>
 
 <script>
-fetch(API + "/api/products")
+fetch(API + "/api/products?trending=true")
+
   .then(res => res.json())
   .then(products => {
 
@@ -292,7 +293,7 @@ fetch(API + "/api/products?bestSeller=true")
             <img src="${p.image}">
           </div>
 
-          <h6>${p.name}</h6>
+          <h6>${p.name}</h6>s
           <p>₹${p.price}</p>
         </div>
       `;

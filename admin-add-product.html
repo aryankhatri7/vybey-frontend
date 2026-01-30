@@ -113,12 +113,28 @@
 
     <h2>Add Product</h2>
 
-    <form id="productForm" enctype="multipart/form-data">
-      <input type="text" name="name" class="form-control mb-3" placeholder="Product Name" required>
-      <input type="number" name="price" class="form-control mb-3" placeholder="Price" required>
-      <input type="file" name="image" class="form-control mb-3" required>
-      <button class="w-100">Add Product</button>
-    </form>
+  <form id="productForm" enctype="multipart/form-data">
+  <input type="text" name="name" class="form-control mb-3" placeholder="Product Name" required>
+  <input type="number" name="price" class="form-control mb-3" placeholder="Price" required>
+  <input type="file" name="image" class="form-control mb-3" required>
+
+  <div class="mb-2">
+    <label>
+      <input type="checkbox" name="trending" value="true">
+      Trending Product
+    </label>
+  </div>
+
+  <div class="mb-3">
+    <label>
+      <input type="checkbox" name="bestSeller" value="true">
+      Best Seller
+    </label>
+  </div>
+
+  <button class="w-100">Add Product</button>
+</form>
+
 
     <hr class="my-4">
     <h5 class="text-center mb-3">All Products</h5>
