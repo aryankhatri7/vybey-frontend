@@ -1,5 +1,6 @@
 // ===== BACKEND URL (ONLY CHANGE THIS IN FUTURE) =====
 window.API_BASE_URL = "https://vybey-backened.onrender.com";
+const API = "https://vybey-backened.onrender.com";
 
 // ===== AUTO FIX FOR ALL localhost CALLS =====
 (function () {

@@ -245,7 +245,7 @@ function logout() {
   location.reload();
 }
 
-fetch("https://vybey-backened.onrender.com/api/products")
+fetch(API + "/api/products")
   .then(res => res.json())
   .then(products => {
     const row = document.getElementById("trendingRow");
@@ -268,7 +268,7 @@ fetch("https://vybey-backened.onrender.com/api/products")
 <script>
 /* EXISTING JS — kuch delete mat karna */
 
-fetch("https://vybey-backened.onrender.com/api/products?bestSeller=true")
+fetch(API + "/api/products?bestSeller=true")
   .then(res => res.json())
   .then(products => {
     const grid = document.getElementById("bestSellerGrid");
@@ -304,5 +304,7 @@ fetch("https://vybey-backened.onrender.com/api/products?bestSeller=true")
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
 </body>
 </html>
