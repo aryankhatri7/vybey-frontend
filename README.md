@@ -11,6 +11,12 @@ I actively experimented, broke things, fixed errors, and learned how different p
 
 ---
 
+## 🔗 Live Demo
+
+Frontend: https://aryankhatri7.github.io/vybey-frontend/  
+Backend API: https://vybey-backened.onrender.com
+
+
 ## 🎯 Project Purpose
 
 I am a **B.Com 1st year student** learning **AI and Digital Marketing**.  
