@@ -17,6 +17,21 @@ Backend API: https://vybey-backened.onrender.com
 
 ---
 
+---
+
+## 📸 Screenshots
+
+### 🛠️ Admin Panel
+![Admin Page](screenshots/admin-page.png)
+
+### 🛍️ Products Page
+![Products Page](screenshots/products-page.png)
+
+### 🔥 Trending Section
+![Trending Section](screenshots/trending-section.png)
+
+---
+
 ## 🎯 Project Purpose
 
 I am a **B.Com 1st year student** learning **AI and Digital Marketing**.  
