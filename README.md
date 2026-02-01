@@ -9,13 +9,13 @@ My focus was on understanding the **overall structure, flow, deployment process,
 
 I actively experimented, broke things, fixed errors, and learned how different parts connect in a real environment.
 
----
 
 ## 🔗 Live Demo
 
 Frontend: https://aryankhatri7.github.io/vybey-frontend/  
 Backend API: https://vybey-backened.onrender.com
 
+---
 
 ## 🎯 Project Purpose
 
