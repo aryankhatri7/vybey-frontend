@@ -281,6 +281,40 @@ body {
   background: #9a7b5f;
 }
 
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-top: 24px;
+}
+
+/* Shop Collection button */
+.shop-btn {
+  background: #9a7b5f;   /* coffee tone */
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+  background: #7f634b;
+  color: #fff;
+}
+
+/* Explore Trends link */
+.hero-actions a:not(.shop-btn) {
+  color: #1f1f1f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.hero-actions a:not(.shop-btn):hover {
+  text-decoration: underline;
+}
+
 /* ======================================================
    SECTION HEADER (COMMON)
 ====================================================== */
