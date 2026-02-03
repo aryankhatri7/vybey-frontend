@@ -49,15 +49,15 @@
         confident details, and modern attitude.
       </p>
 
-      <div class="hero-actions">
-        <button>Shop Collection</button>
-        <a href="products.html">Explore Trends →</a>
-      </div>
+     <div class="hero-actions">
+       <a href="products.html" class="shop-btn">Shop Collection</a>
+       <a href="products.html">Explore Trends →</a>
+     </div>
     </div>
 
     <!-- RIGHT IMAGE -->
     <div class="hero-right">
-      <img src="https://images.unsplash.com/photo-1600180758890-6b94519a8ba6?auto=format&fit=crop&w=800&q=80" alt="Luxury accessory">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80" alt="Luxury accessories minimal">
     </div>
 
   </div>
@@ -241,7 +241,6 @@
 
 <script>
 fetch(API + "/api/products?trending=true")
-
   .then(res => res.json())
   .then(products => {
 

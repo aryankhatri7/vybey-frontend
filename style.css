@@ -266,6 +266,21 @@ body {
     inset 0 0 0 1px rgba(255,255,255,0.5);
 }
 
+.shop-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #111;
+  color: #fff;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.shop-btn:hover {
+  background: #9a7b5f;
+}
+
 /* ======================================================
    SECTION HEADER (COMMON)
 ====================================================== */
